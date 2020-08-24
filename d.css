@@ -1,0 +1,319 @@
+/* LOAD FONTS */
+@font-face {
+    font-family: "koch";
+    src: url(Koch-Antiqua.ttf) format("truetype");
+}
+
+@font-face {
+    /* From the footer of: https://snowpeak.com */
+    font-family: "garamond";
+    src: url(AGaramondPro-Semibold.otf) format("truetype");
+}
+
+
+
+/* COLOR VARIABLES */
+:root {
+    --dark-dark-grey: rgb(23,23,23);
+    --light-grey: rgb(253,253,253);
+    --fade-green: rgb(190,201,139);
+    --fade-pink:  rgb(220,135,125);
+    --fade-blue: rgb(175,197,194);
+}
+
+.green1-bkg { background-color: rgb(169,179,111); }
+.green2-bkg { background-color: rgb(167,180,116); }
+.green3-bkg { background-color: rgb(175,193,117); }
+.green4-bkg { background-color: rgb(190,201,139); }
+.green5-bkg { background-color: rgb(179,190,128); }
+.green6-bkg { background-color: rgb(193,206,140); }
+
+.pink1-bkg { background-color: rgb(236,177,164); }
+.pink2-bkg { background-color: rgb(239,178,167); }
+.pink3-bkg { background-color: rgb(238,171,162); }
+.pink4-bkg { background-color: rgb(232,164,151); }
+.pink5-bkg { background-color: rgb(220,135,125); }
+.pink6-bkg { background-color: rgb(235,169,157); }
+
+.grey1-bkg { background-color: rgb(187,206,207); }
+.grey2-bkg { background-color: rgb(187,203,203); }
+.grey3-bkg { background-color: rgb(155,176,180); }
+.grey4-bkg { background-color: rgb(161,181,182); }
+.grey5-bkg { background-color: rgb(161,180,179); }
+.grey6-bkg { background-color: rgb(175,197,194); }
+
+
+html,
+body {
+    box-sizing: border-box;
+    background: var(--dark-dark-grey);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+
+a {
+    /* Remove unlining of anchors. 'important' prevents from overriding
+          https://stackoverflow.com/questions/2041388/
+             how-to-remove-the-underline-for-anchorslinks                */
+    text-decoration: none !important;
+}
+
+/* HEADER MENU ********************************************************************/
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+
+
+
+
+.test-title-blue {
+    font-family:"garamond";
+    font-size: 100px;
+    text-align: center;
+    color: var(--fade-blue);
+}
+
+.test-title-pink {
+    font-family:"garamond";
+    font-size: 100px;
+    text-align: center;
+    color: var(--fade-pink);
+}
+
+.test-title-green {
+    font-family:"garamond";
+    font-size: 100px;
+    text-align: center;
+    color: var(--fade-green);
+}
+
+/* SLIDE SHOW **********************************************************************/
+
+.slider-container {
+    height: 90%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dots {
+    position: absolute;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    bottom: 0;
+}
+
+.dots label {
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50px;
+    margin: 0 0.2em 1em;
+}
+
+.dots label:hover,
+.dots label:focus {
+    background: #1c87c9;
+}
+
+.dots label:checked {
+    background: #2c22c9;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    padding: 8em 1em 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    transition: left 0s 0.75s;
+}
+
+[id^="slide"]:checked + .slide {
+    left: 0;
+    z-index: 100;
+    transition: left 0.45s ease-out;
+}
+
+
+/* MAIN PAGE TEXT *****************************************************************/
+
+.rich-block {
+    padding:0 30px;
+    letter-spacing:.5px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding:30px 0;
+    padding-top: 50px;
+    color: var(--light-grey);
+}
+
+@media (max-width: 620px) {
+    .rich-block {
+        padding:0 15px
+        margin:30px auto
+    }
+
+}
+
+
+
+
+/* MAIN PAGE FOOTER ***************************************************************/
+
+.main-footer {
+    background: var(--dark-dark-grey);
+    margin-top:90px;
+    padding-top:00px;
+    font-family: "koch";
+}
+
+
+.horizontal-list-title {
+
+}
+
+
+ul#linear-list li,
+ul#linear-list li a {
+    font-style: normal;
+    font-weight: 50;
+    font-size: 15px;
+    display:inline;
+    color: var(--light-grey);
+    padding-left: 5px;
+    letter-spacing: 1.5px;
+}
+
+
+ul#linear-list li a:hover {
+    color: rgb(200,200,200);
+}
+
+
+.footer-grid {
+    display: grid;
+
+    /* Set to single column */
+    grid-template-columns: auto;
+
+    padding-top: 0px;
+    padding-bottom: 15px;
+
+    /* Set spacing between grid columns and rows
+
+       Use 'grid-gap' to set both at the same time
+         grip-gap: 0px;   sets both
+         grid-gap: 0px 2px; sets row and column gaps
+    */
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    text-align: center;
+}
+
+.footer-grid-item {
+    padding: 2px;
+}
+
+
+
+.policy-section,
+.policy-section a {
+    background: var(--dark-dark-grey);
+    color: var(--light-grey);
+    font-style: normal;
+    font-weight: 100;
+    text-transform: none;
+    font-size: 11px;
+    letter-spacing:1.5px;
+    text-align: left;
+    padding:15px 15px;
+
+}
+
+.policy-section a:hover {
+    color:#fff;
+}
+
+/* Make a copyleft symbol  */
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}
+
+
+.left-float {
+    float:left;
+}
+
+
+
+
+.green-font {
+    color: var(--fade-green);
+}
+
+.blue-font {
+    color: var(--fade-blue);
+}
+
+.pink-font {
+    color: var(--fade-pink);
+}
